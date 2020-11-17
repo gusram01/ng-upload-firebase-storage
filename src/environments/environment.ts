@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyA2gYb1JELmM8axeDtK_4FFiYm2wemLhjs',
+    authDomain: 'gus-portfolio.firebaseapp.com',
+    databaseURL: 'https://gus-portfolio.firebaseio.com',
+    projectId: 'gus-portfolio',
+    storageBucket: 'gus-portfolio.appspot.com',
+    messagingSenderId: '1026168379159',
+    appId: '1:1026168379159:web:06dac584d62d55da100952',
+    measurementId: 'G-HF05TSGP3R',
+  },
 };
 
 /*

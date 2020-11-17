@@ -1,0 +1,11 @@
+<div class="card-columns">
+  <div *ngFor="let item of items" class="card">
+    <img [src]="item.url" class="card-img-top" [alt]="item.name" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">
+        <a [href]="item.url" target="_blank">{{ item.url | slice: 0 - 30 }}</a>
+      </p>
+    </div>
+  </div>
+</div>

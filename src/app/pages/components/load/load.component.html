@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-6">
+    <h3>Select files:</h3>
+    <div
+      appNgDropFiles
+      (mouseOver)="overElement = $event"
+      [ngClass]="{ 'file-over': overElement }"
+      [receivedFiles]="files"
+      class="well drop-zone"
+    >
+      <h4>Here your files...</h4>
+      <img src="assets/drop-images.png" alt="drop-files image" />
+    </div>
+    <div class="m-3">
+      <button (click)="clear()" class="btn btn-secondary">Clear</button>
+      <button
+        (click)="saveImages()"
+        [disabled]="files.length < 1"
+        class="btn btn-primary ml-2"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Filename</th>
+        <th>Size</th>
+        <th>Progress</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="files.length > 0">
+      <tr *ngFor="let file of files">
+        <td [ngClass]="{ 'text-green': file.progress >= 100 }">
+          {{ file.name }}
+        </td>
+        <td>{{ file.myFile.size / 1024 / 1024 | number: ".2-2" }} MB</td>
+        <td>
+          <div class="progress">
+            <div
+              [ngStyle]="{ width: file.progress + '%' }"
+              class="progress-bar"
+              role="progressbar"
+            ></div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

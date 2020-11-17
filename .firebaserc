@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gus-portfolio": {
+      "hosting": {
+        "upload": [
+          "gus-portfolio"
+        ]
+      }
+    }
+  }
+}
